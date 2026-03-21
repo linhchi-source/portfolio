@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Hi, I'm </h1>
+
+    <script>
+      const header = document.getElementById("title");
+      const str = "Linh Chi";
+
+      let index = 0;
+
+      function typeEffect() {
+        if (index < str.length) {
+          header.textContent += str[index];
+          index++;
+          setTimeout(typeEffect, 150);
+        } else {
+          // khi gõ xong → thêm class để dừng blink
+          header.classList.add("done");
+        }
+      }
+
+      window.addEventListener("load", typeEffect);
+    </script>
+
+    <style>
+        *{
+            font-family: Inter-b36625f48721ad4e;
+        }
+      #title::after {
+        content: "|";
+        /* margin-left: 5px; */
+        animation: blink 1s infinite;
+      }
+      #title.done::after {
+        animation: blink 1s 3;
+        display: none;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </body>
+</html>

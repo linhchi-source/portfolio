@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+* {
+  outline: 1px solid red;
+}
+.bg-contents {
+  /* font-size: 16px; */
+  border: 2px solid blue;
+  /* padding-top: 10px; */
+}
+.workexp {
+  display: flex;
+  gap: 20px;
+}
+section{
+  height: 500px;
+}
+.companies {
+  display: flex;
+  width: 15%;
+  flex-direction: column;
+}
+.companycontent {
+  display: flex;
+  flex-direction: column;
+  width: calc(85% - 20px);
+}
+.companies li,
+.work li {
+  list-style-type: none;
+}
+.companies li {
+  padding: 15px;
+  color: white;
+  background: grey;
+}
+.companies li:hover {
+  cursor: pointer;
+  background: rgb(86, 73, 73);
+}
+.companycontent span{
+  padding: 10px 0;
+}
+.work {
+  /* margin-top: 20px; */
+}
+.role{
+font-size: 18px;
+}
+.work li{
+  padding: 10px 0;
+  margin-left: 12px;
+  list-style-type: disc;
+}
+.certs {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.bgheader {
+  /* font-weight: bold; */
+}
+#about_me {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  /* align-items: flex-start; */
+  gap: 20px;
+  justify-content: space-between;
+}
+.schoolimg {
+  width: 10%;
+  /* height: auto; */
+}
+.schooling,
+.tech,
+.cert {
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* width: calc(100% / 3) */
+}
+.certdis {
+  display: flex;
+}
+.schooling {
+  width: 20%;
+}
+.tech,
+.certs {
+  width: 40%;
+}
+.tech img {
+  width: 10%;
+}
+.techlogo {
+  /* display: flex; */
+}
+.cert {
+  border: 1px solid #000;
+}
+.ava {
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 100px;
+}
+.header {
+  border: 1px solid palegoldenrod;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #000;
+  /* margin-left: 0; */
+}
+.header::after {
+  content: "|";
+  /* margin-left: 5px; */
+
+  animation: blink 1s infinite;
+}
+.header.done::after {
+  animation: blink 1s 3;
+  display: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.navbar {
+  position: sticky;
+  top:0;
+  overflow: hidden;
+  background: grey;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  /* gap: 20px; */
+  /* padding: 10px; */
+}
+a {
+  text-decoration: none;
+  color: white;
+  /* list-style-type: none; */
+  /* padding: 10px; */
+}
+.navbar li {
+  padding: 20px;
+  /* background: grey; */
+}
+.navbar li:hover {
+  background: rgb(6, 3, 3);
+}
+.bg-contents {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+a:hover {
+  cursor: pointer;
+}
+.icon {
+  width: 36px;
+  height: 24px;
+  cursor: pointer;
+  fill: grey;
+}
+.icon:hover {
+  fill: rgb(19, 18, 18);
+}
+.fb {
+}
+.git {
+  /* fill: */
+}
+.contents {
+  width: 70%;
+  margin: auto;
+}
+header {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 42px;
+}
+.cards {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* gap: 50px; */
+  border: 1px solid red;
+  justify-content: space-between;
+  /* height: auto; */
+  /* height: 100%; */
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+}
+/* Hover state */
+.project-card:hover img {
+  /* filter: blur(2px); */
+  filter: brightness(70%);
+}
+.project-card:hover .spanclass {
+  display: block;
+}
+
+.spanclass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* filter: brightness(100%); */
+
+  width: 150px;
+  text-align: center;
+  /* left:5px; */
+  /* right:5px; */
+  color: white;
+  font-weight: 700;
+  /* border: 1px solid #000; */
+  display: none;
+}
+.project-card {
+  position: relative;
+  border: 5px solid blue;
+  /* width: 30%; */
+  width: 200px;
+}
+.cardimg {
+  /* width: auto; */
+  transition: filter 0.3s;
+  width: 100%;
+  height: 100%;
+  /* height: 50%; */
+}
