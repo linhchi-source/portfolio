@@ -1,12 +1,16 @@
 const project_card = document.querySelector(".project-card");
 // const img = document.querySelector("img")
 const header = document.querySelector(".header");
-const str = "Linh Chi";
+const str = " Linh Chi";
 const monstalab = document.querySelector(".monstalab");
 const fis = document.querySelector(".fis");
 const role = document.querySelector(".role");
 const time1 = document.querySelector(".time1");
 const work = document.querySelector(".work");
+const navicon = document.querySelector(".navicon");
+const navbar = document.querySelector(".navbar");
+const navbarbox = document.querySelector(".navbarbox");
+const navbaritem = document.querySelectorAll(".navbar li");
 let index = 0;
 let companies = [
   {
@@ -28,7 +32,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   },
 ];
 let companyname = ["fis", "monstalab", "apple", "google"];
-
 for (let i = 0; i < companyname.length; i++) {
   console.log(companyname[i]);
   console.log(document.querySelector(`.${companyname[i]}`));
@@ -39,7 +42,35 @@ for (let i = 0; i < companyname.length; i++) {
     work.innerHTML = companies[i].work;
   });
 }
-
+function checkWidth() {
+  if (window.innerWidth > 750) {
+    navbar.style.display = "flex";
+  } else {
+    navbar.style.display = "none";
+  }
+}
+// window.addEventListener("resize", checkWidth);
+// checkWidth();
+function clickNavicon() {
+  if (navicon.getAttribute("src") === "menu.png") {
+    // console.log("hello");
+    navbar.style.display = "block";
+    navicon.src = "close.png";
+    navbarbox.style.position = "relative";
+    // navbar.classList.remove("navbar")
+    navbar.classList.add("navbarflex");
+  } else {
+    navicon.src = "menu.png";
+    navbar.classList.remove("navbarflex");
+    console.log(navbar.classList);
+    navbar.style.display = "none";
+  }
+}
+function clickItem() {
+  navbar.style.display = "none";
+  navicon.src = "menu.png";
+}
+navicon.addEventListener("click", clickNavicon);
 function typeEffect() {
   if (index < str.length) {
     header.textContent += str[index];
@@ -50,5 +81,7 @@ function typeEffect() {
     header.classList.add("done");
   }
 }
-
-window.addEventListener("load", typeEffect);
+navbaritem.forEach((item) => {
+  item.addEventListener("click",clickItem);
+});
+// window.addEventListener("load", typeEffect);
